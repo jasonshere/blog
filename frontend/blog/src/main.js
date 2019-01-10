@@ -13,6 +13,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSyncAlt, faAt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faGithub } from '@fortawesome/fontawesome-free-brands'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 Vue.use(BootstrapVue)
 

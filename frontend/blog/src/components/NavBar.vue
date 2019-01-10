@@ -4,7 +4,7 @@
     <b-navbar toggleable="md" type="dark" variant="info" fixed="top" sticky>
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand to="#">
-        <img class="brand_avatar d-inline-block align-top" :src="avatar" alt="BV">
+        <img class="brand_avatar d-inline-block align-top" :src="avatar" alt="Jason">
         Jason's Note
       </b-navbar-brand>
 

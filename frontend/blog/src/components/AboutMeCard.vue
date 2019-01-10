@@ -1,6 +1,6 @@
 <template>
   <div style="perspective: 800px;">
-    <transition mode="out-in" :enter-class="enterClass" :leave-to-class="leaveToClass">
+    <transition appear mode="out-in" :enter-class="enterClass" :leave-to-class="leaveToClass">
       <b-card
         no-body
         :img-src="banner"
@@ -13,14 +13,22 @@
         key="1"
         style="transform-style: preserve-3d;"
       >
-        <p class="card-avatar">
+        <p class="card-avatar" @click="flip">
           <img :src="avatar" alt="Jason">
         </p>
-        <b-card-body>
+
+        <b-card-body style="position:relative">
+          <vue-particles color="#bbb" :particleOpacity="1" :particlesNumber="200"></vue-particles>
           <p class="card-title">Mr. Jason Lee</p>
           <p class="card-text">Web Developer</p>
-          <p class="card-click" @click="flip()">
-            <font-awesome-icon icon="sync-alt"/>Click here to learn more about me
+          <p
+            class="card-click d-none d-sm-block"
+            @click="flip()"
+            @mouseover="flipIcon"
+            @mouseout="removeFlipIcon"
+          >
+            <font-awesome-icon icon="sync-alt" :class="iconFlipping"/>
+            <span>Click here to learn more about me</span>
           </p>
         </b-card-body>
       </b-card>
@@ -66,8 +74,14 @@
               </a>
             </p>
           </div>
-          <p class="card-click" @click="flip()">
-            <font-awesome-icon icon="sync-alt"/>Click here to learn more about me
+          <p
+            class="card-click d-none d-sm-block"
+            @click="flip()"
+            @mouseover="flipIcon"
+            @mouseout="removeFlipIcon"
+          >
+            <font-awesome-icon icon="sync-alt" :class="iconFlipping"/>
+            <span>Click here to learn more about me</span>
           </p>
         </b-card-body>
       </b-card>
@@ -87,7 +101,8 @@ export default {
       banner,
       bannerBig,
       avatar,
-      flipping: false,
+      flipping: true,
+      iconFlipping: '',
       enterClass: 'v-enter',
       leaveToClass: 'v-leave-to'
     }
@@ -97,6 +112,12 @@ export default {
       this.flipping = !this.flipping
       this.enterClass = this.flipping ? 'v-enter' : 'v-enter-reverse'
       this.leaveToClass = this.flipping ? 'v-leave-to' : 'v-leave-to-reverse'
+    },
+    flipIcon () {
+      this.iconFlipping = 'flip-icon-rotate'
+    },
+    removeFlipIcon () {
+      this.iconFlipping = 'flip-icon-rotate-reverse'
     }
   }
 }
@@ -106,6 +127,14 @@ export default {
 html,
 body {
   font-family: Roboto, sans-serif;
+  #particles-js {
+    position: absolute;
+    top: -60px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% + 60px);
+    z-index: -1;
+  }
   .card {
     margin: 20px auto;
     width: 80%;
@@ -116,8 +145,9 @@ body {
       max-height: 300px;
     }
     .img-fluid {
-      height: 350px;
-      max-height: 350px;
+      min-height: 350px;
+      max-height: 650px;
+      overflow: auto;
       border-radius: calc(0.25rem - 1px);
       box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.46),
         0 2px 10px 0 rgba(0, 0, 0, 0.52);
@@ -135,24 +165,25 @@ body {
     .card-body {
       font-weight: 700;
       .card-title {
-        font-size: 30px;
+        font-size: 25px;
+        margin-top: -20px;
+        margin-bottom: 12px;
+        color: #5b646e;
       }
       .card-text {
-        font-size: 15px;
+        font-size: 18px;
+        margin-bottom: 12px;
         color: #2196f3;
       }
       .card-click {
         font-weight: 400;
         margin-bottom: 0px;
         color: gray;
-        font-size: 15px;
+        font-size: 16px;
         cursor: pointer;
         svg {
-          margin-right: 3px;
+          margin-right: 8px;
           transition: all 0.8s ease;
-          &:hover {
-            transform: rotateZ(360deg);
-          }
         }
       }
       &.card2 {
@@ -160,6 +191,7 @@ body {
         position: relative;
         .card-text {
           color: #fff;
+          font-size: 15px;
           h2 {
             font-size: 30px;
           }
@@ -199,6 +231,8 @@ body {
     .card-avatar {
       background-color: #ffffff;
       margin-bottom: 0;
+      background: transparent;
+      cursor: pointer;
       img {
         border: 5px solid #fff;
         background: none repeat scroll 0 0 #fff;
@@ -228,6 +262,12 @@ body {
   }
   .v-leave-to-reverse {
     transform: rotateY(-90deg);
+  }
+  .flip-icon-rotate {
+    transform: rotateZ(360deg);
+  }
+  .flip-icon-rotate-reverse {
+    transform: rotateZ(-360deg);
   }
 }
 </style>
