@@ -149,7 +149,8 @@ body {
       min-height: 350px;
       max-height: 650px;
       overflow: auto;
-      border-radius: calc(0.25rem - 1px);
+      // border-radius: calc(0.25rem - 1px);
+      border-radius: 0;
       box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.46),
         0 2px 10px 0 rgba(0, 0, 0, 0.52);
     }
@@ -159,7 +160,8 @@ body {
       position: absolute;
       margin: -1.25rem;
       background-color: #000;
-      border-radius: calc(0.25rem - 1px);
+      // border-radius: calc(0.25rem - 1px);
+      border-radius: 0;
       opacity: 0.6;
       z-index: 1;
     }
