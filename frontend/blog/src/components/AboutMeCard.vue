@@ -1,5 +1,5 @@
 <template>
-  <div style="perspective: 800px;">
+  <div style="perspective: 1500px;">
     <transition appear mode="out-in" :enter-class="enterClass" :leave-to-class="leaveToClass">
       <b-card
         no-body
@@ -91,7 +91,7 @@
 
 <script>
 import banner from '@/assets/imgs/banner.jpeg'
-import bannerBig from '@/assets/imgs/banner_big.jpg'
+import bannerBig from '@/assets/imgs/banner_big.jpeg'
 import avatar from '@/assets/imgs/avatar.jpeg'
 
 export default {
