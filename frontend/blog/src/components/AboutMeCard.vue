@@ -136,13 +136,14 @@ body {
     z-index: -1;
   }
   .card {
-    margin: 20px auto;
-    width: 80%;
+    width: 100%;
+    border-radius: 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-      0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      0 2px 10px 0px rgba(0, 0, 0, 0.12);
     border: 0;
     .card-img-top {
       max-height: 300px;
+      border-radius: 0;
     }
     .img-fluid {
       min-height: 350px;
