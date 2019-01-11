@@ -37,12 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-html,
-body {
-  img.brand_avatar {
-    border-radius: 50%;
-    margin-right: 10px;
-    width: 30px;
-  }
+img.brand_avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 30px;
 }
 </style>

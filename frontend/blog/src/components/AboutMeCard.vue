@@ -124,153 +124,151 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-html,
-body {
-  font-family: Roboto, sans-serif;
-  #particles-js {
-    position: absolute;
-    top: -60px;
-    left: 0px;
-    width: 100%;
-    height: calc(100% + 60px);
-    z-index: -1;
-  }
-  .card {
-    width: 100%;
+#particles-js {
+  position: absolute;
+  top: -60px;
+  left: 0px;
+  width: 100%;
+  height: calc(100% + 60px);
+  z-index: -1;
+}
+.card {
+  width: 100%;
+  border-radius: 0;
+  // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  // 0 2px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 0 0 #f5bb00;
+  border: 0;
+  .card-img-top {
+    max-height: 300px;
     border-radius: 0;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-      0 2px 10px 0px rgba(0, 0, 0, 0.12);
-    border: 0;
-    .card-img-top {
-      max-height: 300px;
-      border-radius: 0;
+  }
+  .img-fluid {
+    min-height: 350px;
+    max-height: 650px;
+    overflow: auto;
+    // border-radius: calc(0.25rem - 1px);
+    border-radius: 0;
+    // box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.46),
+    // 0 2px 10px 0 rgba(0, 0, 0, 0.52);
+    box-shadow: 0 5px 0 0 #f5bb00;
+  }
+  .over {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: -1.25rem;
+    background-color: #000;
+    // border-radius: calc(0.25rem - 1px);
+    border-radius: 0;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  .card-body {
+    font-weight: 700;
+    .card-title {
+      font-size: 25px;
+      margin-top: -20px;
+      margin-bottom: 12px;
+      color: #5b646e;
     }
-    .img-fluid {
-      min-height: 350px;
-      max-height: 650px;
-      overflow: auto;
-      // border-radius: calc(0.25rem - 1px);
-      border-radius: 0;
-      box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.46),
-        0 2px 10px 0 rgba(0, 0, 0, 0.52);
+    .card-text {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #2196f3;
     }
-    .over {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      margin: -1.25rem;
-      background-color: #000;
-      // border-radius: calc(0.25rem - 1px);
-      border-radius: 0;
-      opacity: 0.6;
-      z-index: 1;
-    }
-    .card-body {
-      font-weight: 700;
-      .card-title {
-        font-size: 25px;
-        margin-top: -20px;
-        margin-bottom: 12px;
-        color: #5b646e;
+    .card-click {
+      font-weight: 400;
+      margin-bottom: 0px;
+      color: gray;
+      font-size: 16px;
+      cursor: pointer;
+      svg {
+        margin-right: 8px;
+        transition: all 0.8s ease;
       }
+    }
+    &.card2 {
+      z-index: 2;
+      position: relative;
       .card-text {
-        font-size: 18px;
-        margin-bottom: 12px;
-        color: #2196f3;
+        color: #fff;
+        font-size: 15px;
+        h2 {
+          font-size: 30px;
+        }
+        hr {
+          border-color: #bdbdbd;
+        }
+        .paragraph {
+          font-weight: 400;
+          min-height: 100px;
+        }
+        .faicon {
+          font-size: 25px;
+          margin: 0 15px;
+          &.facebook {
+            color: #00d6ff;
+          }
+          &.linkedin {
+            color: #fff100;
+          }
+          &.wechat {
+            color: #44ed06;
+            cursor: pointer;
+          }
+          &.email {
+            color: #51dee1;
+          }
+          &.github {
+            color: #fff;
+          }
+        }
       }
       .card-click {
-        font-weight: 400;
-        margin-bottom: 0px;
-        color: gray;
-        font-size: 16px;
-        cursor: pointer;
-        svg {
-          margin-right: 8px;
-          transition: all 0.8s ease;
-        }
-      }
-      &.card2 {
-        z-index: 2;
-        position: relative;
-        .card-text {
-          color: #fff;
-          font-size: 15px;
-          h2 {
-            font-size: 30px;
-          }
-          hr {
-            border-color: #bdbdbd;
-          }
-          .paragraph {
-            font-weight: 400;
-            min-height: 100px;
-          }
-          .faicon {
-            font-size: 25px;
-            margin: 0 15px;
-            &.facebook {
-              color: #00d6ff;
-            }
-            &.linkedin {
-              color: #fff100;
-            }
-            &.wechat {
-              color: #44ed06;
-              cursor: pointer;
-            }
-            &.email {
-              color: #51dee1;
-            }
-            &.github {
-              color: #fff;
-            }
-          }
-        }
-        .card-click {
-          color: #fff;
-        }
-      }
-    }
-    .card-avatar {
-      background-color: #ffffff;
-      margin-bottom: 0;
-      background: transparent;
-      cursor: pointer;
-      img {
-        border: 5px solid #fff;
-        background: none repeat scroll 0 0 #fff;
-        border-radius: 50%;
-        margin-top: -60px;
-        width: 120px;
-        transition: all 0.8s ease;
-        &:hover {
-          transform: rotateZ(360deg);
-        }
+        color: #fff;
       }
     }
   }
-  .v-enter-active,
-  .v-leave-active {
-    transform-style: preserve-3d;
-    transition: all 0.3s linear;
+  .card-avatar {
+    background-color: #ffffff;
+    margin-bottom: 0;
+    background: transparent;
+    cursor: pointer;
+    img {
+      border: 5px solid #fff;
+      background: none repeat scroll 0 0 #fff;
+      border-radius: 50%;
+      margin-top: -60px;
+      width: 120px;
+      transition: all 0.8s ease;
+      &:hover {
+        transform: rotateZ(360deg);
+      }
+    }
   }
-  .v-enter {
-    transform: rotateY(-90deg);
-  }
-  .v-leave-to {
-    transform: rotateY(90deg);
-  }
-  .v-enter-reverse {
-    transform: rotateY(90deg);
-  }
-  .v-leave-to-reverse {
-    transform: rotateY(-90deg);
-  }
-  .flip-icon-rotate {
-    transform: rotateZ(360deg);
-  }
-  .flip-icon-rotate-reverse {
-    transform: rotateZ(-360deg);
-  }
+}
+.v-enter-active,
+.v-leave-active {
+  transform-style: preserve-3d;
+  transition: all 0.3s linear;
+}
+.v-enter {
+  transform: rotateY(-90deg);
+}
+.v-leave-to {
+  transform: rotateY(90deg);
+}
+.v-enter-reverse {
+  transform: rotateY(90deg);
+}
+.v-leave-to-reverse {
+  transform: rotateY(-90deg);
+}
+.flip-icon-rotate {
+  transform: rotateZ(360deg);
+}
+.flip-icon-rotate-reverse {
+  transform: rotateZ(-360deg);
 }
 </style>
